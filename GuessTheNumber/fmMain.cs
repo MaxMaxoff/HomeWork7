@@ -53,26 +53,5 @@ namespace GuessTheNumber
             txbxLog.AppendText(message);
             Console.WriteLine(game.Number);
         }
-
-        private void maskedTBNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void maskedTBNumber_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (game.Status(Int32.Parse(maskedTBNumber.Text)) == 0)
-            {
-                ShowMessageBox("Угадали!");
-                btCheck.Enabled = false;
-            }
-            else if (game.Status(Int32.Parse(maskedTBNumber.Text)) < 0) ShowMessageBox($"{maskedTBNumber.Text}: мое число меньше!");
-            else if (game.Status(Int32.Parse(maskedTBNumber.Text)) > 0) ShowMessageBox($"{maskedTBNumber.Text}: мое число больше!");
-        }
-
-        private void BtCheck_Click(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
